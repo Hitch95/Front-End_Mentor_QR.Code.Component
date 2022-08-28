@@ -1,72 +1,76 @@
-*, ::after, ::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* Font 'Outfit' importé avec @import */
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+
+/* mon Reset */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variable pour les couleurs */
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Lightgray: hsl(212, 45%, 89%);
+  --GrayishBlue: hsl(220, 15%, 55%);
+  --DarkBlue: hsl(218, 44%, 22%);
 }
 
 body {
-    background-color: hsl(220, 15%, 55%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    font-family: 'Outfit', sans-serif;
-    min-height: 100vh;
+  background-color: var(--GrayishBlue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Outfit", sans-serif;
+  min-height: 100vh;
 }
 
 main {
-    background-color: hsl(0, 0%, 100%);
-    padding: 1rem 1rem 1.5rem 1rem;
-    width: 620px;
-    height: 830px;
-    border-radius: 1rem;
-    text-align: center;
-    transition: box-shadow 0.5s;
+  background-color: var(--White);
+  padding: 1rem 1rem 1rem 1rem;
+  width: 22.5rem; /* Equivalent à 360px */
+  height: 34.375rem; /* Equivalent à 550px */
+  border-radius: 1rem; /* Equivalent à 16px */
+  text-align: center;
+  transition: box-shadow 0.5s;
+}
+main:hover {
+  box-shadow: 0px 11px 39px 9px hsl(210, 30%, 78%);
 }
 
-main:hover{
-    box-shadow: 0px 11px 39px 9px hsl(210, 30%, 78%);
-}
-
+/* Modification par rapport à l'image originel pour un meilleur rendu Responsive */
 main img {
-    content: url('./images/image-qr-code.png');
+  width: 20.313rem; /* Equivalent à 325px */
+  border-radius: 1rem; /* Equivalent à 16px */
 }
 
+/* La partie Texte */
 h1 {
-    margin: 20px 20px;
-    font-weight: 700;
-    color: hsl(218, 44%, 22%);
+  margin: 1.25rem 0; /* Equivalent à 20px */
+  font-weight: 700;
+  color: hsl(218, 44%, 22%);
 }
 p {
-    margin: 20px 20px 35px 20px;
-    font-weight: 400;
-    color: hsl(212, 45%, 89%);
+  margin-top: 1.25rem; /* Equivalent à 20px */
+  font-weight: 400;
+  color: hsl(212, 45%, 89%);
 }
 
-@media only screen and (max-width: 375px) {
-    body {
-        width: 375px;
-        height: 100vh;
-    }
-    main {
-        width: 100%;
-    }
-    main img {
-        content: url('./images/image-qr-code\ \(copie\).png'); /* 350px of width */
-        width: 350px;
-    }
-    main h1, p {
-        margin: 0;
-    }
-}
-
+/* La partie sous la Carte */
 footer {
-    width: 250px;
-    font-size: 11px;
-    text-align: center;
-    color: #FFF;
+  padding-top: 0.313rem; /* Equivalent à 5px */
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 0.05rem;
+  color: #fff;
 }
 footer a {
-    color: hsl(228, 45%, 44%);
+  color: rgba(45, 125, 251, 255); /* <= Same color as the main image */
+}
+footer a:hover {
+  font-weight: bold;
 }
